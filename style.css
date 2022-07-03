@@ -7,12 +7,19 @@
 
 * {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
 }
 
 /* Font Stylings */
 
 h1 {
+    font-size: 28px;
     color: white;
+}
+
+h2 {
+    font-size: 24px;
+    color: black;
 }
 
 /* Button Stylings */
@@ -21,6 +28,7 @@ h1 {
     width: 100%;
     height: auto;
     background-color: lightskyblue;
+    font-size: 16px;
     color: white;
     padding: 10px;
     border-radius: 10px;
@@ -41,3 +49,35 @@ header {
     margin: 0;
 }
 
+/* Main Stylings */
+
+main {
+    display: flex;
+    width: 100vw;
+    max-width: 100%;
+    text-align: center;
+    justify-content: center;
+
+}
+
+/* Aside Left Stylings */
+
+#asideleft {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    max-width: 20vw;;
+    height: auto;
+    background-color: aquamarine;
+}
+
+/* Aside Right Stylings */
+
+#asideright {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    max-width: 80vw;
+    height: 100px;
+    background-color: brown;
+}
