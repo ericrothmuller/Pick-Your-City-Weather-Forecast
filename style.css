@@ -8,6 +8,7 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
+    box-sizing: border-box;
 }
 
 /* Font Stylings */
@@ -22,16 +23,40 @@ h2 {
     color: black;
 }
 
-/* Button Stylings */
+/* Form Container Stylings */
+
+form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: green;
+}
+
+/* Search Text Field Stylings */
+
+#cityname {
+    width: 100%;
+    height: auto;
+    word-wrap: break-word;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0;
+}
+
+/* Search Button Stylings */
 
 #searchbutton {
     width: 100%;
     height: auto;
     background-color: lightskyblue;
     font-size: 16px;
+    font-weight: bold;
     color: white;
     padding: 10px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 /* Header Stylings */
