@@ -1,10 +1,22 @@
-// Search Button
+// Universal Variables
 
 var searchForm = document.getElementById("searchform");
 
 var cityNameForm = document.getElementById("citynameform");
 
 var cityNameListArea = document.getElementById("cityNameList");
+
+var cityNameText = document.getElementById("citynametext");
+
+var cityTemperature = document.getElementById("citytemperature");
+
+var cityWind = document.getElementById("citywind");
+
+var cityHumidity = document.getElementById("cityhumidity");
+
+var cityUvIndex = document.getElementById("cityuvindex");
+
+// Search Button
 
 function searchFormSubmitted(event) {
     event.preventDefault();
@@ -38,8 +50,43 @@ cityNameListArea.addEventListener("click", function(event) {
         function fetchCityInformation(getLocalStorageItem) {
             var openWeatherMapURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityNameForURL + "&units=imperial&appid=2b5118468768fe9e99782fc05eb5171a";
             fetch(openWeatherMapURL).then(function(response) {
-                console.log(response);
+                return response.json();
+            }).then (function (data) {
+                console.log("data",data)
+
+                cityNameFromData = data.city.name;
+                console.log(cityNameFromData);
+                cityNameText.textContent = cityNameFromData;
+                
+                cityTemperatureFromData = data.list[0].main.temp + " °F";
+                console.log(cityTemperatureFromData);
+                cityTemperature.textContent = cityTemperatureFromData;
+
+                cityWindFromData = data.list[0].wind.speed + " MPH";
+                console.log(cityWindFromData);
+                cityWind.textContent = cityWindFromData;
+
+                cityHumidityFromData = data.list[0].main.humidity + " %";
+                console.log(cityHumidityFromData);
+                cityHumidity.textContent = cityHumidityFromData;
+
+                cityUvFromData = data.city.name;
+                console.log(cityUvFromData);
+                cityUvIndex.textContent = cityUvFromData;
+
+
+
+
+
+
+
+
+
             })
+                
+
+
+
         }
         fetchCityInformation();
     }
