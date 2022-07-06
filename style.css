@@ -110,7 +110,7 @@ main {
 hr {
     width: 100%;
     border: 1px solid black;
-
+    border-radius: 1px;
 }
 
 /* City Box Styling */
