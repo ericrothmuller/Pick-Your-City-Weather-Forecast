@@ -16,6 +16,8 @@ var cityHumidity = document.getElementById("cityhumidity");
 
 var cityUvIndex = document.getElementById("cityuvindex");
 
+
+
 // Search Button
 
 function searchFormSubmitted(event) {
@@ -52,32 +54,32 @@ cityNameListArea.addEventListener("click", function(event) {
             fetch(openWeatherMapURL).then(function(response) {
                 return response.json();
             }).then (function (data) {
-                console.log("data",data)
 
                 cityNameFromData = data.city.name;
-                console.log(cityNameFromData);
                 cityNameText.textContent = cityNameFromData;
                 
                 cityTemperatureFromData = data.list[0].main.temp + " °F";
-                console.log(cityTemperatureFromData);
                 cityTemperature.textContent = cityTemperatureFromData;
 
                 cityWindFromData = data.list[0].wind.speed + " MPH";
-                console.log(cityWindFromData);
                 cityWind.textContent = cityWindFromData;
 
                 cityHumidityFromData = data.list[0].main.humidity + " %";
-                console.log(cityHumidityFromData);
                 cityHumidity.textContent = cityHumidityFromData;
 
-                cityUvFromData = data.city.name;
-                console.log(cityUvFromData);
-                cityUvIndex.textContent = cityUvFromData;
+                var cityLat = data.city.coord.lat;
+                var cityLon = data.city.coord.lon;
 
+                var getCityLatLonUrl = "https://api.openweathermap.org/data/2.5/uvi?lat=" + cityLat + "&lon=" + cityLon + "&appid=2b5118468768fe9e99782fc05eb5171a";
 
+                fetch(getCityLatLonUrl).then(function(reponseLatLon) {
+                    return reponseLatLon.json();
+                }).then(function(data) {
 
-
-
+                    cityUvFromData = data.value;
+                    cityUvIndex.textContent = cityUvFromData;
+                    
+                })
 
 
 
