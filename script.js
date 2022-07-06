@@ -1,18 +1,3 @@
-
-
-
-
-
-
-
-
-
-// City Name Display
-
-
-
-
-
 // Search Button
 
 var searchForm = document.getElementById("searchform");
@@ -44,9 +29,18 @@ cityNameListArea.addEventListener("click", function(event) {
 
     if (element.matches("button") === true) {
         var getDataIDValue = element.getAttribute("data-id");
-        // console.log(element);
-        // console.log(getDataIDValue);
         var getLocalStorageItem = localStorage.getItem(getDataIDValue);
-        console.log(getLocalStorageItem);
+        var cityNameForURL = getLocalStorageItem.replace(/ /g, '+');
+        console.log(cityNameForURL);
+
+        // City Highlight Display
+
+        function fetchCityInformation(getLocalStorageItem) {
+            var openWeatherMapURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityNameForURL + "&units=imperial&appid=2b5118468768fe9e99782fc05eb5171a";
+            fetch(openWeatherMapURL).then(function(response) {
+                console.log(response);
+            })
+        }
+        fetchCityInformation();
     }
 })
