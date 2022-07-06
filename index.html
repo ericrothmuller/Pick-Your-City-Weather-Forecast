@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <!-- Header -->
     <header>
         <h1>Weather Dashboard</h1>
     </header>
+    <!-- Main Section -->
     <main>
+        <!-- Left Sidebar -->
         <aside id="asideleft">
             <h2>Search for a City:</h2>
             <form>
-                <input type="text" id="cityname" name="cityname" placeholder="San Francisco"><br/>
+                <input type="text" id="citynameform" name="cityname" placeholder=" San Francisco"><br/>
                 <input type="submit" id="searchbutton" value="Search">
             </form>
             <hr />
@@ -23,8 +26,23 @@
                 <li></li>
             </ul>
         </aside>
+        <!-- Right Sidebar -->
         <aside id="asideright">
-            <div id="selectedcity">
+            <!-- City info -->
+            <div id="selectedcitybox">
+                <div class="selectedcityinfo">
+                    <h2 id="citynametext">City Name <span id="todaysdate"> </span></h2>
+                    <p id="cityweather">
+                        Temp: <span id="citytemperature"> </span>
+                        <br/><br/>
+                        Wind: <span id="citywind"> </span>
+                        <br/><br/>
+                        Humidity: <span id="cityhumidity"> </span>
+                        <br/><br/>
+                        UV Index: <span id="cityuvindex"> </span>
+                        <br/><br/>
+                    </p>
+                </div>
                 
             </div>
             <div id="fivedayforecast">

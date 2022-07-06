@@ -50,12 +50,12 @@ form {
 
 /* Search Text Field Stylings */
 
-#cityname {
+#citynameform {
     width: 100%;
     height: auto;
     word-wrap: break-word;
-    font-size: 16px;
-    padding: 10px;
+    padding: 10px 0px;
+    font-size: 18px;
     border-radius: 10px;
     margin: 0;
 }
@@ -103,7 +103,7 @@ main {
     flex-direction: column;
     width: 80vw;
     max-width: 80vw;
-    height: 100px;
+    height: fit-content;
     background-color: brown;
 }
 
@@ -111,4 +111,14 @@ hr {
     width: 100%;
     border: 1px solid black;
 
+}
+
+/* City Box Styling */
+
+#selectedcitybox {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 25px;
 }
