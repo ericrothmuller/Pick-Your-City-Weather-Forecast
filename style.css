@@ -122,3 +122,16 @@ hr {
     text-align: left;
     padding-left: 25px;
 }
+
+/* City Name Button Styling */
+
+.citybutton {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    padding: 10px;
+    align-items: left;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0px;
+}
