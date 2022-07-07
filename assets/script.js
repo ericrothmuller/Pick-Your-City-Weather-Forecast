@@ -89,7 +89,7 @@ function searchFormSubmitted(event) {
 
 searchForm.addEventListener("submit", searchFormSubmitted);
 
-// City Button
+// City Buttons
 
 cityNameListArea.addEventListener("click", function(event) {
     var element = event.target;
@@ -99,7 +99,7 @@ cityNameListArea.addEventListener("click", function(event) {
         var getLocalStorageItem = localStorage.getItem(getDataIDValue);
         var cityNameForURL = getLocalStorageItem.replace(/ /g, '+');
 
-        // City Highlight Display
+        // Single City Highlight Display
 
         function fetchCityInformation(getLocalStorageItem) {
             var openWeatherMapURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityNameForURL + "&units=imperial&appid=2b5118468768fe9e99782fc05eb5171a";
@@ -152,7 +152,7 @@ cityNameListArea.addEventListener("click", function(event) {
 
                 // 5 Day Future Forecast Goes Here
 
-                // 2nd Day Card
+                // 2nd Day Section
 
                 dateDataDayTwo = data.list[8].dt_txt;
                 dateDataAfterSplitTwo = dateDataDayTwo.split(" ")[0];
@@ -167,7 +167,7 @@ cityNameListArea.addEventListener("click", function(event) {
                 cityHumidityFromDataDayTwo = data.list[8].main.humidity + " %";
                 cityHumidityDayTwo.textContent = cityHumidityFromDataDayTwo;
 
-                // 3rd Day Card
+                // 3rd Day Section
 
                 dateDataDayThree = data.list[16].dt_txt;
                 dateDataAfterSplitThree = dateDataDayThree.split(" ")[0];
@@ -182,7 +182,7 @@ cityNameListArea.addEventListener("click", function(event) {
                 cityHumidityFromDataDayThree = data.list[16].main.humidity + " %";
                 cityHumidityDayThree.textContent = cityHumidityFromDataDayThree;
 
-                // 4th Day Card
+                // 4th Day Section
 
                 dateDataDayFour = data.list[24].dt_txt;
                 dateDataAfterSplitFour = dateDataDayFour.split(" ")[0];
@@ -197,7 +197,7 @@ cityNameListArea.addEventListener("click", function(event) {
                 cityHumidityFromDataDayFour = data.list[24].main.humidity + " %";
                 cityHumidityDayFour.textContent = cityHumidityFromDataDayFour;
 
-                // 5th Day Card
+                // 5th Day Section
 
                 dateDataDayFive = data.list[32].dt_txt;
                 dateDataAfterSplitFive = dateDataDayFive.split(" ")[0];
@@ -212,7 +212,7 @@ cityNameListArea.addEventListener("click", function(event) {
                 cityHumidityFromDataDayFive = data.list[32].main.humidity + " %";
                 cityHumidityDayFive.textContent = cityHumidityFromDataDayFive;
 
-                // 6th Day Card
+                // 6th Day Section
 
                 dateDataDaySix = data.list[39].dt_txt;
                 dateDataAfterSplitSix = dateDataDaySix.split(" ")[0];
@@ -226,13 +226,8 @@ cityNameListArea.addEventListener("click", function(event) {
 
                 cityHumidityFromDataDaySix = data.list[39].main.humidity + " %";
                 cityHumidityDaySix.textContent = cityHumidityFromDataDaySix;
-
-
             })
         }
         fetchCityInformation();
-        
-
     }
-    
 })
