@@ -107,9 +107,6 @@ cityNameListArea.addEventListener("click", function(event) {
                 return response.json();
             }).then (function (data) {
 
-
-                console.log(data);
-
                 dateDataDayOne = data.list[0].dt_txt;
                 dateDataDayOneAfterSplit = dateDataDayOne.split(" ")[0];
                 dateDayOne.textContent = "- " + dateDataDayOneAfterSplit;
@@ -237,4 +234,5 @@ cityNameListArea.addEventListener("click", function(event) {
         
 
     }
+    
 })

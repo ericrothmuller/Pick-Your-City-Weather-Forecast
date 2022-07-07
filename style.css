@@ -45,7 +45,6 @@ form {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: green;
 }
 
 /* Search Text Field Stylings */
@@ -74,6 +73,8 @@ form {
     cursor: pointer;
 }
 
+/* City Box Stylings */
+
 /* Main Stylings */
 
 main {
@@ -93,7 +94,7 @@ main {
     width: 20vw;
     max-width: 20vw;;
     height: auto;
-    background-color: aquamarine;
+    background-color: seashell;
 }
 
 /* Aside Right Stylings */
@@ -104,7 +105,6 @@ main {
     width: 80vw;
     max-width: 80vw;
     height: fit-content;
-    background-color: brown;
 }
 
 hr {
@@ -115,12 +115,17 @@ hr {
 
 /* City Box Styling */
 
+#citynametext, #datedayone {
+    font-size: 35px;
+}
+
 #selectedcitybox {
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     text-align: left;
     padding-left: 25px;
+    background-color: beige;
 }
 
 /* City Name Button Styling */
@@ -155,6 +160,10 @@ hr {
 
 /* Five Day Forecast Section Styling */
 
+#fivedayheader {
+    font-size: 35px;
+}
+
 #forecastdays {
     display: flex;
     display: inline-block;
@@ -163,4 +172,8 @@ hr {
     width: 18%;
     max-width: 25%;
     text-align: left;
+}
+
+#fivedayforecast {
+    background-color: antiquewhite;
 }
