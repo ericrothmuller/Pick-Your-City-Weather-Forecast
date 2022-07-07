@@ -28,6 +28,48 @@ var cityWindDayTwo = document.getElementById("citywinddaytwo");
 
 var cityHumidityDayTwo = document.getElementById("cityhumiditydaytwo");
 
+// Day 3 Universal Variables
+
+var dateDayThree  = document.getElementById("datedaythree");
+
+var cityTemperatureDayThree = document.getElementById("citytemperaturedaythree");
+
+var cityWindDayThree = document.getElementById("citywinddaythree");
+
+var cityHumidityDayThree = document.getElementById("cityhumiditydaythree");
+
+// Day 4 Universal Variables
+
+var dateDayFour  = document.getElementById("datedayfour");
+
+var cityTemperatureDayFour = document.getElementById("citytemperaturedayfour");
+
+var cityWindDayFour = document.getElementById("citywinddayfour");
+
+var cityHumidityDayFour = document.getElementById("cityhumiditydayfour");
+
+// Day 5 Universal Variables
+
+var dateDayFive  = document.getElementById("datedayfive");
+
+var cityTemperatureDayFive = document.getElementById("citytemperaturedayfive");
+
+var cityWindDayFive = document.getElementById("citywinddayfive");
+
+var cityHumidityDayFive = document.getElementById("cityhumiditydayfive");
+
+// Day 6 Universal Variables
+
+var dateDaySix  = document.getElementById("datedaysix");
+
+var cityTemperatureDaySix = document.getElementById("citytemperaturedaysix");
+
+var cityWindDaySix = document.getElementById("citywinddaysix");
+
+var cityHumidityDaySix = document.getElementById("cityhumiditydaysix");
+
+
+
 
 
 // Search Button
@@ -111,11 +153,13 @@ cityNameListArea.addEventListener("click", function(event) {
                     
                 })
 
-                // 5 Day Forecast Goes Here
+                // 5 Day Future Forecast Goes Here
+
+                // 2nd Day Card
 
                 dateDataDayTwo = data.list[8].dt_txt;
-                dateDataAfterSplit = dateDataDayTwo.split(" ")[0];
-                dateDayTwo.textContent = dateDataAfterSplit;
+                dateDataAfterSplitTwo = dateDataDayTwo.split(" ")[0];
+                dateDayTwo.textContent = dateDataAfterSplitTwo;
 
                 cityTemperatureFromDataDayTwo = data.list[8].main.temp + " °F";
                 cityTemperatureDayTwo.textContent = cityTemperatureFromDataDayTwo;
@@ -125,6 +169,66 @@ cityNameListArea.addEventListener("click", function(event) {
 
                 cityHumidityFromDataDayTwo = data.list[8].main.humidity + " %";
                 cityHumidityDayTwo.textContent = cityHumidityFromDataDayTwo;
+
+                // 3rd Day Card
+
+                dateDataDayThree = data.list[16].dt_txt;
+                dateDataAfterSplitThree = dateDataDayThree.split(" ")[0];
+                dateDayThree.textContent = dateDataAfterSplitThree;
+
+                cityTemperatureFromDataDayThree = data.list[16].main.temp + " °F";
+                cityTemperatureDayThree.textContent = cityTemperatureFromDataDayThree;
+
+                cityWindFromDataDayThree = data.list[16].wind.speed + " MPH";
+                cityWindDayThree.textContent = cityWindFromDataDayThree;
+
+                cityHumidityFromDataDayThree = data.list[16].main.humidity + " %";
+                cityHumidityDayThree.textContent = cityHumidityFromDataDayThree;
+
+                // 4th Day Card
+
+                dateDataDayFour = data.list[24].dt_txt;
+                dateDataAfterSplitFour = dateDataDayFour.split(" ")[0];
+                dateDayFour.textContent = dateDataAfterSplitFour;
+
+                cityTemperatureFromDataDayFour = data.list[24].main.temp + " °F";
+                cityTemperatureDayFour.textContent = cityTemperatureFromDataDayFour;
+
+                cityWindFromDataDayFour = data.list[24].wind.speed + " MPH";
+                cityWindDayFour.textContent = cityWindFromDataDayFour;
+
+                cityHumidityFromDataDayFour = data.list[24].main.humidity + " %";
+                cityHumidityDayFour.textContent = cityHumidityFromDataDayFour;
+
+                // 5th Day Card
+
+                dateDataDayFive = data.list[32].dt_txt;
+                dateDataAfterSplitFive = dateDataDayFive.split(" ")[0];
+                dateDayFive.textContent = dateDataAfterSplitFive;
+
+                cityTemperatureFromDataDayFive = data.list[32].main.temp + " °F";
+                cityTemperatureDayFive.textContent = cityTemperatureFromDataDayFive;
+
+                cityWindFromDataDayFive = data.list[32].wind.speed + " MPH";
+                cityWindDayFive.textContent = cityWindFromDataDayFive;
+
+                cityHumidityFromDataDayFive = data.list[32].main.humidity + " %";
+                cityHumidityDayFive.textContent = cityHumidityFromDataDayFive;
+
+                // 6th Day Card
+
+                dateDataDaySix = data.list[39].dt_txt;
+                dateDataAfterSplitSix = dateDataDaySix.split(" ")[0];
+                dateDaySix.textContent = dateDataAfterSplitSix;
+
+                cityTemperatureFromDataDaySix = data.list[39].main.temp + " °F";
+                cityTemperatureDaySix.textContent = cityTemperatureFromDataDaySix;
+
+                cityWindFromDataDaySix = data.list[39].wind.speed + " MPH";
+                cityWindDaySix.textContent = cityWindFromDataDaySix;
+
+                cityHumidityFromDataDaySix = data.list[39].main.humidity + " %";
+                cityHumidityDaySix.textContent = cityHumidityFromDataDaySix;
 
 
             })
