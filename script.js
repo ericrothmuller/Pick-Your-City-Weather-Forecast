@@ -6,6 +6,8 @@ var cityNameForm = document.getElementById("citynameform");
 
 var cityNameListArea = document.getElementById("cityNameList");
 
+var dateDayOne  = document.getElementById("datedayone");
+
 var cityNameText = document.getElementById("citynametext");
 
 var cityTemperature = document.getElementById("citytemperature");
@@ -16,6 +18,16 @@ var cityHumidity = document.getElementById("cityhumidity");
 
 var cityUvIndex = document.getElementById("cityuvindex");
 
+// Day 2 Universal Variables
+
+var dateDayTwo  = document.getElementById("datedaytwo");
+
+var cityTemperatureDayTwo = document.getElementById("citytemperaturedaytwo");
+
+var cityWindDayTwo = document.getElementById("citywinddaytwo");
+
+var cityHumidityDayTwo = document.getElementById("cityhumiditydaytwo");
+
 
 
 // Search Button
@@ -23,7 +35,6 @@ var cityUvIndex = document.getElementById("cityuvindex");
 function searchFormSubmitted(event) {
     event.preventDefault();
     if (cityNameForm.value) {
-        // console.log(cityNameForm.value.toUpperCase());
         var cityNameUppercased = cityNameForm.value.toUpperCase();
         var inputKey = cityNameUppercased.split('').filter(e => e.trim().length).join('');
         var inputValue = cityNameUppercased;
@@ -45,7 +56,6 @@ cityNameListArea.addEventListener("click", function(event) {
         var getDataIDValue = element.getAttribute("data-id");
         var getLocalStorageItem = localStorage.getItem(getDataIDValue);
         var cityNameForURL = getLocalStorageItem.replace(/ /g, '+');
-        console.log(cityNameForURL);
 
         // City Highlight Display
 
@@ -54,6 +64,13 @@ cityNameListArea.addEventListener("click", function(event) {
             fetch(openWeatherMapURL).then(function(response) {
                 return response.json();
             }).then (function (data) {
+
+
+                console.log(data);
+
+                dateDataDayOne = data.list[0].dt_txt;
+                dateDataDayOneAfterSplit = dateDataDayOne.split(" ")[0];
+                dateDayOne.textContent = "- " + dateDataDayOneAfterSplit;
 
                 cityNameFromData = data.city.name;
                 cityNameText.textContent = cityNameFromData;
@@ -70,6 +87,8 @@ cityNameListArea.addEventListener("click", function(event) {
                 var cityLat = data.city.coord.lat;
                 var cityLon = data.city.coord.lon;
 
+                // Another fetch call for Lat and Lon to get UVIndex data
+
                 var getCityLatLonUrl = "https://api.openweathermap.org/data/2.5/uvi?lat=" + cityLat + "&lon=" + cityLon + "&appid=2b5118468768fe9e99782fc05eb5171a";
 
                 fetch(getCityLatLonUrl).then(function(reponseLatLon) {
@@ -77,7 +96,6 @@ cityNameListArea.addEventListener("click", function(event) {
                 }).then(function(data) {
 
                     cityUvFromData = data.value;
-                    console.log(cityUvFromData);
 
                     if (cityUvFromData >= 6) {
                         cityUvIndex.setAttribute("class", "dangeruv");
@@ -93,15 +111,26 @@ cityNameListArea.addEventListener("click", function(event) {
                     
                 })
 
+                // 5 Day Forecast Goes Here
 
+                dateDataDayTwo = data.list[8].dt_txt;
+                dateDataAfterSplit = dateDataDayTwo.split(" ")[0];
+                dateDayTwo.textContent = dateDataAfterSplit;
+
+                cityTemperatureFromDataDayTwo = data.list[8].main.temp + " °F";
+                cityTemperatureDayTwo.textContent = cityTemperatureFromDataDayTwo;
+
+                cityWindFromDataDayTwo = data.list[8].wind.speed + " MPH";
+                cityWindDayTwo.textContent = cityWindFromDataDayTwo;
+
+                cityHumidityFromDataDayTwo = data.list[8].main.humidity + " %";
+                cityHumidityDayTwo.textContent = cityHumidityFromDataDayTwo;
 
 
             })
-                
-
-
-
         }
         fetchCityInformation();
+        
+
     }
 })

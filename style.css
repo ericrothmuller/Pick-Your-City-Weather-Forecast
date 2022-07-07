@@ -152,3 +152,15 @@ hr {
     color: green;
     font-weight: bolder;
 }
+
+/* Five Day Forecast Section Styling */
+
+#forecastdays {
+    display: flex;
+    display: inline-block;
+    align-items: left;
+    text-align: left;
+    width: 18%;
+    max-width: 25%;
+    text-align: left;
+}
