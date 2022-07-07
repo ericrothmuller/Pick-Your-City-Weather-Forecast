@@ -77,6 +77,18 @@ cityNameListArea.addEventListener("click", function(event) {
                 }).then(function(data) {
 
                     cityUvFromData = data.value;
+                    console.log(cityUvFromData);
+
+                    if (cityUvFromData >= 6) {
+                        cityUvIndex.setAttribute("class", "dangeruv");
+
+                    } else if (cityUvFromData <= 2) {
+                        cityUvIndex.setAttribute("class", "lowuv");
+
+                    } else {
+                        cityUvIndex.setAttribute("class", "moderateuv");
+                    }
+
                     cityUvIndex.textContent = cityUvFromData;
                     
                 })

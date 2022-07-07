@@ -135,3 +135,20 @@ hr {
     cursor: pointer;
     margin: 10px 0px;
 }
+
+/* UV Button Styling */
+
+.dangeruv {
+    color: red;
+    font-weight: bolder;
+}
+
+.lowuv {
+    color: blue;
+    font-weight: bolder;
+}
+
+.moderateuv {
+    color: green;
+    font-weight: bolder;
+}
